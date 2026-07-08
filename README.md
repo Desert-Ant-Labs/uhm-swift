@@ -1,6 +1,8 @@
-# uhm-swift
+# Uhm: On-device Filler-Word Detection for Swift (iOS, macOS)
 
 On-device filler-word detection for iOS and macOS. A frame-precise classifier finds "uh", "um", "hmm" and other fillers in audio with one prediction every 20 ms. Trained on English; transfers acoustically to Spanish, French, German, and Dutch without retraining.
+
+Uhm does acoustic disfluency detection: it finds the disfluencies directly from the waveform, so there is no transcript to run first. That makes it a good fit for editing workflows that need to remove filler words, from podcast editing to general transcription cleanup, all without sending audio off the device.
 
 ```swift
 import Uhm
@@ -68,6 +70,11 @@ Set `includeTypes: false` in `Uhm.Options` to skip the bundled type labeler when
 ## Example App
 
 A minimal SwiftUI example is included in `Examples/UhmExample`. Pick an audio file, run detection, and list the fillers with timestamps. The model downloads on first run and caches locally.
+
+## Other platforms
+
+- Model weights and card: [`desert-ant-labs/uhm`](https://huggingface.co/desert-ant-labs/uhm)
+- Kotlin and JS SDKs are planned.
 
 ## License
 
